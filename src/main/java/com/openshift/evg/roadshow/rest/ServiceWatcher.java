@@ -46,7 +46,8 @@ public class ServiceWatcher extends AbstractResourceWatcher<Service> {
     serviceURL = "http://" + serviceName + ":" + port;
 
     logger.info("[INFO] Computed service URL: {}", serviceURL);
-    
+
+    logger.info("Testing - kevin dalling");
     return serviceURL;
   }
 }
