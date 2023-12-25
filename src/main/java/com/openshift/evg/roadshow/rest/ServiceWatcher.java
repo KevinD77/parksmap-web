@@ -46,6 +46,10 @@ public class ServiceWatcher extends AbstractResourceWatcher<Service> {
     serviceURL = "http://" + serviceName + ":" + port;
 
     logger.info("[INFO] Computed service URL: {}", serviceURL);
+
+    ServiceList svcList = getOpenShiftClient().services().inNamespace("default").list();
+    logger.info("Found {} Services", svcList.getItems().size());
+    
     return serviceURL;
   }
 }
