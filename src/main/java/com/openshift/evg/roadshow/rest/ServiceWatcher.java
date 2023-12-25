@@ -28,8 +28,7 @@ public class ServiceWatcher extends AbstractResourceWatcher<Service> {
 
   @Override
   protected String getUrl(String serviceName) {
-    List<Service> services = getOpenShiftClient().services().inNamespace(getNamespace())
-        .withField("metadata.name", serviceName).list().getItems();
+    List<Service> services = getOpenShiftClient().services().inNamespace(getNamespace()).list().getItems();
     if (services.isEmpty()) {
       return null;
     }
