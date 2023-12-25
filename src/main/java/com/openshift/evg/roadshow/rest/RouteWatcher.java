@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 import io.fabric8.kubernetes.client.Watch;
 import io.fabric8.openshift.api.model.Route;
-import io.fabric8.openshift.api.model.Pod;
 
 @Component
 public class RouteWatcher extends AbstractResourceWatcher<Route> {
@@ -47,7 +46,7 @@ public class RouteWatcher extends AbstractResourceWatcher<Route> {
       logger.error("Route {} does not have a port assigned", routeName);
     }
 
-    List<Pod> rList = getOpenShiftClient().pods().inNamespace(getNamespace()).list().getItems();
+    List<Route> rList = getOpenShiftClient().routes().inNamespace(getNamespace()).list().getItems();
     
     logger.info("[INFO] Computed route URL: {}", routeUrl);
     logger.info("Testing - Route- made by kevin dalling");
