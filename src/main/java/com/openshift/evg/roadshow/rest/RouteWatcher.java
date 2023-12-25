@@ -54,6 +54,7 @@ public class RouteWatcher extends AbstractResourceWatcher<Route> {
     logger.info("info #1 - {}",rList.get(0).getSpec().getHost());
     logger.info("info #2 - {}",rList.get(1).getSpec().getHost());
     logger.info("info #3 - {}",rList.get(2).getSpec().getHost());
+    logger.info("info #4 - {}",rList.get(3).getSpec().getHost());
     
     return routeUrl;
   }
