@@ -51,7 +51,8 @@ public class RouteWatcher extends AbstractResourceWatcher<Route> {
     logger.info("[INFO] Computed route URL: {}", routeUrl);
     logger.info("Testing - Route- made by kevin dalling");
     logger.info("Size= {}",rList.size());
-
+    logger.info("info - {}",rList.get(0).getSpec().getHost());
+    
     return routeUrl;
   }
 }
