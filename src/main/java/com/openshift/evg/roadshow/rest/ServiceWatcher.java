@@ -29,7 +29,7 @@ public class ServiceWatcher extends AbstractResourceWatcher<Service> {
   @Override
   protected String getUrl(String serviceName) {
     List<Service> services = getOpenShiftClient().services().inNamespace(getNamespace())
-        .withLabel(PARKSMAP_BACKEND_LABEL).withField("metadata.name", serviceName).list().getItems();
+        .withField("metadata.name", serviceName).list().getItems();
     if (services.isEmpty()) {
       return null;
     }
@@ -46,8 +46,7 @@ public class ServiceWatcher extends AbstractResourceWatcher<Service> {
     serviceURL = "http://" + serviceName + ":" + port;
 
     logger.info("[INFO] Computed service URL: {}", serviceURL);
-
-    logger.info("Testing - kevin dalling");
+    logger.info("service= ", serviceName);
     return serviceURL;
   }
 }
