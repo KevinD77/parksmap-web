@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import io.fabric8.kubernetes.client.Watch;
 import io.fabric8.openshift.api.model.Route;
+import io.fabric8.openshift.api.model.Pod;
 
 @Component
 public class RouteWatcher extends AbstractResourceWatcher<Route> {
